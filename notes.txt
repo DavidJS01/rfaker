@@ -1,0 +1,26 @@
+SUPPORTED DATATYPES (FOR MY REFERENCE :D):
+
+- Name
+- Address
+- SSN
+
+User needs to input:
+1. header rows
+2. for each row, what datatype 
+
+so this sounds like a good time to use k/v pairs. prob a json doc 
+
+"data_columns": [
+    "name": "Name",
+    "patient_add": "Address",
+    "patient_ssn": "SSN"
+] 
+
+preferably this would write to csv (later other formats) in order of provided
+input 
+
+like below 
+`
+name, patient_add, patient_ssn 
+fake_name, fake_address, fake_ssn
+`

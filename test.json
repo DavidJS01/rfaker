@@ -1,0 +1,5 @@
+{
+    "patient_name": "name",
+    "patient_address": "address",
+    "patient_ssn": "ssn"
+}
