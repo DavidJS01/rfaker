@@ -1,10 +1,8 @@
 //// This module contains functions
-//// to generate or interact with a SSN
+//// to generate or interact with a SSN.
 //// All SSNs are generated randomly.
 import gleam/int 
-import gleam/string_builder
 import placeholder/placeholder
-import gleam/io
 import gleam/string
 
 fn build_ssn(ssn: String) -> String {
@@ -13,9 +11,9 @@ fn build_ssn(ssn: String) -> String {
 }
 
 fn generate_fake_ssn(ssn: String, counter: Int) -> String {
-    // I'll be real. I know StringBuilder is best for this
-    // but I got no clue how to actually use it. rather
-    // refactor later than spend too long on it now
+    // todo: use StringBuilder
+    // starting with an empty string, "", add a random
+    // num to the string until the length is 9 (valid ssn)
 
     let generated_ssn: String = build_ssn(ssn)
     case counter {
@@ -24,6 +22,7 @@ fn generate_fake_ssn(ssn: String, counter: Int) -> String {
     }
 }
 
+/// Return a random SSN as a string
 pub fn get_fake_ssn() -> String {
     generate_fake_ssn("", 0)
 }
