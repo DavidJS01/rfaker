@@ -28,8 +28,3 @@ pub fn get_fake_ssn() -> String {
     generate_fake_ssn("", 0)
 }
 
-pub fn main() -> Nil {
-    let c: String = get_fake_ssn()
-    io.print(c)
-
-}
