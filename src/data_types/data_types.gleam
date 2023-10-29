@@ -4,6 +4,7 @@ import data_types/router
 import data_generators/addresses
 import data_generators/ssn
 import data_generators/names
+
 pub type DataTypes {
   Address
   Name
@@ -18,8 +19,9 @@ pub type DataTypeError {
 /// valid data type. returns either ok(DataTypes.type)
 /// or Error(Reason)
 fn parse_data_type(data_type: String) -> Result(DataTypes, DataTypeError) {
-  let cleaned_data_type = string.lowercase(data_type)
-  |> string.trim()
+  let cleaned_data_type =
+    string.lowercase(data_type)
+    |> string.trim()
 
   case cleaned_data_type {
     "address" -> Ok(Address)
@@ -38,13 +40,12 @@ fn exit_program(failed_data_type: String) -> Nil {
 }
 
 fn route_data_generator(data_type: DataTypes) -> String {
-    case data_type {
-        Address -> addresses.get_fake_address()
-        Name -> names.get_fake_name("full")
-        SSN -> ssn.get_fake_ssn()
-    }
+  case data_type {
+    Address -> addresses.get_fake_address()
+    Name -> names.get_fake_name("full")
+    SSN -> ssn.get_fake_ssn()
+  }
 }
-
 
 /// given a data type as a string, assert that it matches
 /// one enum in type DataTypes (address, name, etc)
