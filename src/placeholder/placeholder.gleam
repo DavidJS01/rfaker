@@ -11,3 +11,7 @@ pub fn get_random_item(data_list: List(a)) -> a {
     let assert Ok(item) = list.at(data_list, random_index)
     item
 }
+
+pub fn generate_random_int(start: Int, stop: Int) -> Int {
+    int.random(start, stop)
+}
