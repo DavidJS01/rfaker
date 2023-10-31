@@ -1,6 +1,4 @@
 import gleam/string
-import gleam/io
-import data_types/router
 import data_generators/addresses
 import data_generators/ssn
 import data_generators/names
@@ -31,13 +29,6 @@ fn parse_data_type(data_type: String) -> Result(DataTypes, DataTypeError) {
   }
 }
 
-/// ok i know this is bad but I need to review handling
-/// errors
-fn exit_program(failed_data_type: String) -> Nil {
-  io.println("ERROR: Bad data type " <> failed_data_type)
-  io.println("---> Expected one of Address, Name, SSN")
-  panic()
-}
 
 fn route_data_generator(data_type: DataTypes) -> String {
   case data_type {
